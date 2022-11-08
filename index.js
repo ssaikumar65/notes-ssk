@@ -5,6 +5,7 @@ import connectDB from "./config/db.js";
 import errorHandler from "./middleware/errorMiddleware.js";
 import notesRouter from "./routes/notesRoute.js";
 import userRouter from "./routes/userRoute.js";
+import path from "path";
 
 const PORT = process.env.PORT || 5000;
 dotenv.config();
@@ -21,7 +22,6 @@ app.use("/api/notes", notesRouter);
 
 // Serve frontend
 if (process.env.NODE_ENV === "production") {
-  const path = require("path");
   app.use(express.static(path.resolve(__dirname, "frontend", "build")));
 
   app.get("*", (req, res) =>
