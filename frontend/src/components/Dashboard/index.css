@@ -1,0 +1,180 @@
+.dashboardContent {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.addNoteHolder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100px;
+}
+.dashboardContent .loader {
+  width: 60px;
+  height: 60px;
+  border-width: 8px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.inputNote {
+  width: min(85%, 700px);
+  min-height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 7px rgb(0, 0, 0, 0.5);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 16px;
+}
+
+.inputNote .textarea {
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  color: var(--secondary);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+[contenteditable="true"]:empty:before {
+  content: attr(data-ph);
+  color: var(--medium);
+  font-weight: 500;
+  cursor: text;
+}
+
+.emptyNotesListHolder {
+  width: 100%;
+  min-height: calc(100vh - 165px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notesListHolder {
+  width: 100%;
+  padding: 0px 100px;
+}
+
+.notesList {
+  width: 100%;
+  padding: 40px 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.grid {
+  flex-wrap: wrap;
+}
+.list {
+  align-items: center;
+  flex-direction: column;
+}
+.cards {
+  width: 300px;
+  max-width: 600px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 1px rgb(0, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  position: relative;
+}
+
+.cards:hover {
+  box-shadow: 0 0 6px rgb(0, 0, 0, 0.3);
+}
+.cards:hover .delete,
+.cards:hover .edit {
+  opacity: 1;
+}
+
+.cardIcons {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--medium);
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: flex;
+  background-color: var(--primary);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgb(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  padding: 2px;
+}
+.delete {
+  top: -10px;
+  right: -10px;
+}
+.edit {
+  top: -10px;
+  right: 20px;
+}
+.cardIcons:hover {
+  opacity: 0.8;
+}
+
+.emptyNotesList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--medium);
+  user-select: none;
+}
+
+.addButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  right: -10px;
+  bottom: -10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: var(--primary);
+  box-shadow: 0 0 7px rgb(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.addButton:active {
+  background-color: var(--medium);
+}
+
+@media screen and (max-width: 900px) {
+  .notesListHolder {
+    padding: 0px 20px;
+  }
+  .emptyNotesList {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .notesList {
+    align-items: center;
+    flex-direction: column;
+  }
+  .cards {
+    width: 90%;
+  }
+}

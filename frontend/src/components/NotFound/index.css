@@ -1,0 +1,15 @@
+.notfound {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  .notfound {
+    font-size: 20px;
+  }
+}
