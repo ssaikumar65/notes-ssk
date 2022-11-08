@@ -22,6 +22,7 @@ app.use("/api/notes", notesRouter);
 
 // Serve frontend
 if (process.env.NODE_ENV === "production") {
+  const __dirname = path.resolve();
   app.use(express.static(path.resolve(__dirname, "frontend", "build")));
 
   app.get("*", (req, res) =>
